@@ -1,0 +1,28 @@
+# Copy the following code to Kibana - Developer Tool's console
+# Run this before python script so that the data for geo coordinates is formated correctly for display
+
+# if you already imported chess_geocoord without executing this delete the data with this and then run the code bellow
+DELETE /chess_geocoord	
+
+#
+PUT /chess_geocoord
+{
+    "mappings": {
+
+        "chesstype": {
+
+            "properties": {
+
+                "handle": {"type": "text"},
+
+                "followers": {"type": "text"},
+
+                "geo_point": {"type": "geo_point"}
+
+            }
+
+        }
+
+    }
+
+}
